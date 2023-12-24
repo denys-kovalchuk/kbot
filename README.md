@@ -1,1 +1,2 @@
-A simple telegram bot on GO lang
+# kbot
+devops application from scratch
