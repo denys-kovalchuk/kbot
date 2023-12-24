@@ -1,4 +1,4 @@
-APP=$(shell basename $(shell git remote get-url kbot))
+APP=kbot
 REGISTRY=ghcr.io/denys-kovalchuk
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETOS=linux #linux darwin windows
