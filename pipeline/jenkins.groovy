@@ -7,7 +7,6 @@ pipeline {
     }
 
     environment {
-	GITHUB_TOKEN=credentials('github-token')
 	REPO = 'https://github.com/denys-kovalchuk/kbot'
 	REGISTRY = 'ghcr.io/denys-kovalchuk'
 	BRANCH = 'main'
