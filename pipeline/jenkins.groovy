@@ -48,7 +48,7 @@ pipeline {
 
 	stage('login to GHCR') {
             steps {
-                sh "docker login ghcr.io -u denys-kovalchuk -p $GHCR_TOKEN"
+                sh "docker login ghcr.io -u $LOGIN -p $GHCR_TOKEN"
             }
         }
 
