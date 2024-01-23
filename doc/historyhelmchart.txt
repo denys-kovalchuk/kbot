@@ -1,0 +1,5 @@
+ 1223* helm
+ 1224* helm create helm
+ 1225* echo $(git describe --tags --abbrev=0)-$(git rev-parse --short HEAD)
+ 1226* helm lint ./helm
+ 1227* helm template kbot ./helm

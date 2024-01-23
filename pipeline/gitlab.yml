@@ -1,0 +1,49 @@
+stages:
+  - example
+  - clone
+  - test
+  - build
+  - image
+  - push
+
+variables:
+  REPO: "https://github.com/denys-kovalchuk/kbot"
+  BRANCH: "main"
+
+example:
+  stage: example
+  script:
+    - echo "Build for platform ${OS}"
+    - echo "Build for arch: ${ARCH}"
+
+clone:
+  stage: clone
+  script:
+    - echo "CLONE REPOSITORY"
+    - git clone --branch $BRANCH $REPO
+
+test:
+  stage: test
+  script:
+    - echo "TEST EXECUTION STARTED"
+    - make --version
+    - make test
+
+build:
+  stage: build
+  script:
+    - echo "BUILD EXECUTION STARTED"
+    - make build
+
+image:
+  stage: image
+  script:
+    - echo "IMAGE EXECUTION STARTED"
+    - make image
+
+push:
+  stage: push
+  script:
+    - echo "PUSH EXECUTION STARTED"
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - make push
